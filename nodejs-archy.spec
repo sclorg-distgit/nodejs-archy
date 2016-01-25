@@ -4,8 +4,8 @@
 
 
 Name:       %{?scl_prefix}nodejs-archy
-Version:    0.0.2
-Release:    8%{?dist}
+Version:    1.0.0
+Release:    1%{?dist}
 Summary:    Renders nested hierarchies with unicode pipes
 License:    MIT
 Group:      System Environment/Libraries
@@ -43,9 +43,12 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %{nodejs_sitelib}/archy
-%doc README.markdown examples
+%doc readme.markdown examples/*
 
 %changelog
+* Mon Nov 30 2015 Tomas Hrcka <thrcka@redhat.com> - 1.0.0-1
+- New upstream release
+
 * Thu Oct 17 2013 Tomas Hrcka thrcka@redhat.com - 0.0.2-8
 - replace provides and requires with macro
 
