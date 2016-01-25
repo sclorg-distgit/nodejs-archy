@@ -1,15 +1,11 @@
 %{?scl:%scl_package nodejs-archy}
 %{!?scl:%global pkg_name %{name}}
+%{?nodejs_find_provides_and_requires}
 
-
-%{?scl:
-%define _use_internal_dependency_generator 0
-%define __find_requires %{_rpmconfigdir}/%{scl_prefix}require.sh
-%define __find_provides %{_rpmconfigdir}/%{scl_prefix}provide.sh}
 
 Name:       %{?scl_prefix}nodejs-archy
-Version:    0.0.2
-Release:    7.sc1%{?dist}
+Version:    1.0.0
+Release:    1%{?dist}
 Summary:    Renders nested hierarchies with unicode pipes
 License:    MIT
 Group:      System Environment/Libraries
@@ -47,9 +43,15 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %{nodejs_sitelib}/archy
-%doc README.markdown examples
+%doc readme.markdown examples/*
 
 %changelog
+* Mon Nov 30 2015 Tomas Hrcka <thrcka@redhat.com> - 1.0.0-1
+- New upstream release
+
+* Thu Oct 17 2013 Tomas Hrcka thrcka@redhat.com - 0.0.2-8
+- replace provides and requires with macro
+
 * Thu Apr 11 2013 Stanislav Ochotnicky <sochotnicky@redhat.com> - 0.0.2-7
 - Add support for software collections
 
