@@ -5,7 +5,7 @@
 
 Name:       %{?scl_prefix}nodejs-archy
 Version:    1.0.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Renders nested hierarchies with unicode pipes
 License:    MIT
 Group:      System Environment/Libraries
@@ -46,6 +46,9 @@ rm -rf %{buildroot}
 %doc readme.markdown examples/*
 
 %changelog
+* Sun Feb 14 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.0.0-2
+- rebuilt
+
 * Mon Nov 30 2015 Tomas Hrcka <thrcka@redhat.com> - 1.0.0-1
 - New upstream release
 
